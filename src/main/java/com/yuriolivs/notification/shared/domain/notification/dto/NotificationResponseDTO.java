@@ -11,6 +11,7 @@ public record NotificationResponseDTO(
         UUID id,
         NotificationStatus status,
         NotificationChannel channel,
+        String recipient,
         LocalDateTime createdAt
 ) {
     public static NotificationResponseDTO from(Notification entity) {
@@ -18,6 +19,7 @@ public record NotificationResponseDTO(
                 entity.getId(),
                 entity.getStatus(),
                 entity.getChannel(),
+                entity.getRecipient(),
                 entity.getCreatedAt()
         );
     }
