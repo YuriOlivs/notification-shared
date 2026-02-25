@@ -2,6 +2,7 @@ package com.yuriolivs.notification.shared.domain.notification.enums;
 
 public enum NotificationPriority {
     URGENT("10"),
+    SCHEDULED("10"),
     WARNING("7"),
     INFO("4"),
     MARKETING("1");
