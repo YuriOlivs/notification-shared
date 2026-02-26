@@ -1,5 +1,6 @@
 package com.yuriolivs.notification.shared.domain.schedule.dto;
 
+import com.yuriolivs.notification.shared.domain.notification.enums.NotificationChannel;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
@@ -10,5 +11,7 @@ public record SchedulePayloadDTO(
         UUID id,
 
         @NotBlank
-        String payload
+        String payload,
+
+        NotificationChannel channel
 ) {}

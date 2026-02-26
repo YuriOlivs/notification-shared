@@ -1,19 +1,35 @@
 package com.yuriolivs.notification.shared.domain.notification;
 
+import com.yuriolivs.notification.shared.domain.notification.enums.NotificationChannel;
 import com.yuriolivs.notification.shared.domain.notification.enums.NotificationPriority;
 
 import java.util.Map;
 import java.util.UUID;
 
-public class NotificationSend {
+public class NotificationMessage {
     private UUID id;
     private NotificationPriority priority;
     private Map<String, String> payload;
+    private NotificationChannel channel;
 
-    public NotificationSend(UUID id, NotificationPriority priority, Map<String, String> payload) {
+    public NotificationMessage(
+            UUID id,
+            NotificationPriority priority,
+            Map<String, String> payload,
+            NotificationChannel channel
+    ) {
         this.id = id;
         this.priority = priority;
         this.payload = payload;
+        this.channel = channel;
+    }
+
+    public NotificationChannel getChannel() {
+        return channel;
+    }
+
+    public void setChannel(NotificationChannel channel) {
+        this.channel = channel;
     }
 
     public UUID getId() {
