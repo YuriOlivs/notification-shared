@@ -12,6 +12,8 @@ public class NotificationMessage {
     private Map<String, String> payload;
     private NotificationChannel channel;
 
+    public NotificationMessage() {}
+
     public NotificationMessage(
             UUID id,
             NotificationPriority priority,
