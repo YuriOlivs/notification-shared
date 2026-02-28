@@ -8,6 +8,8 @@ public class NotificationResult {
     private boolean successful;
     private String message;
 
+    public NotificationResult() {}
+
     public NotificationResult(
             UUID id,
             UUID scheduleId,
@@ -18,6 +20,21 @@ public class NotificationResult {
         this.scheduleId = scheduleId;
         this.successful = successful;
         this.message = message;
+    }
+
+    public NotificationResult(
+            UUID id,
+            UUID scheduleId
+    ) {
+        this.id = id;
+        this.scheduleId = scheduleId;
+    }
+
+    public static NotificationResult from(NotificationMessage message) {
+        return new NotificationResult(
+                message.getId(),
+                message.getScheduleId()
+        );
     }
 
     public UUID getId() {
