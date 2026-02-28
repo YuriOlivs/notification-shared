@@ -4,6 +4,7 @@ import com.yuriolivs.notification.shared.domain.notification.enums.NotificationC
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
+import java.util.Map;
 import java.util.UUID;
 
 public record SchedulePayloadDTO(
@@ -11,7 +12,7 @@ public record SchedulePayloadDTO(
         UUID id,
 
         @NotBlank
-        String payload,
+        Map<String, String> payload,
 
         NotificationChannel channel
 ) {}
