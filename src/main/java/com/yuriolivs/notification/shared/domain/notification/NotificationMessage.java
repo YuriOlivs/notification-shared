@@ -11,6 +11,7 @@ public class NotificationMessage {
     private NotificationPriority priority;
     private Map<String, String> payload;
     private NotificationChannel channel;
+    private UUID scheduleId;
 
     public NotificationMessage() {}
 
@@ -24,6 +25,20 @@ public class NotificationMessage {
         this.priority = priority;
         this.payload = payload;
         this.channel = channel;
+    }
+
+    public NotificationMessage(
+            UUID id,
+            NotificationPriority priority,
+            Map<String, String> payload,
+            NotificationChannel channel,
+            UUID scheduleId
+    ) {
+        this.id = id;
+        this.priority = priority;
+        this.payload = payload;
+        this.channel = channel;
+        this.scheduleId = scheduleId;
     }
 
     public NotificationChannel getChannel() {
@@ -56,5 +71,13 @@ public class NotificationMessage {
 
     public void setPayload(Map<String, String> payload) {
         this.payload = payload;
+    }
+
+    public UUID getScheduleId() {
+        return scheduleId;
+    }
+
+    public void setScheduleId(UUID scheduleId) {
+        this.scheduleId = scheduleId;
     }
 }
