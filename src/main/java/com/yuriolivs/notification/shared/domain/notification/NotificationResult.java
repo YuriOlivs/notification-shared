@@ -1,11 +1,15 @@
 package com.yuriolivs.notification.shared.domain.notification;
 
 import com.yuriolivs.notification.shared.domain.schedule.enums.ScheduleStatus;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 
 import java.util.UUID;
 
 @ToString
+@Getter
+@Setter
 public class NotificationResult {
     private UUID id;
     private UUID scheduleId;
@@ -39,37 +43,5 @@ public class NotificationResult {
                 message.getId(),
                 message.getScheduleId()
         );
-    }
-
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
-    public UUID getScheduleId() {
-        return scheduleId;
-    }
-
-    public void setScheduleId(UUID scheduleId) {
-        this.scheduleId = scheduleId;
-    }
-
-    public ScheduleStatus getStatus() {
-        return status;
-    }
-
-    public void setStatus(ScheduleStatus status) {
-        this.status = status;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
     }
 }

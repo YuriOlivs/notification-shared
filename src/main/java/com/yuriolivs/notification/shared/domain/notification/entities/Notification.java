@@ -4,10 +4,16 @@ import com.yuriolivs.notification.shared.domain.notification.enums.NotificationC
 import com.yuriolivs.notification.shared.domain.notification.enums.NotificationPriority;
 import com.yuriolivs.notification.shared.domain.notification.enums.NotificationStatus;
 import com.yuriolivs.notification.shared.domain.notification.enums.NotificationType;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+@ToString
+@Getter
+@Setter
 public class Notification {
     private UUID id;
 
@@ -48,82 +54,6 @@ public class Notification {
         this.status = status;
         this.priority = priority;
         this.createdAt = createdAt;
-        this.payload = payload;
-    }
-
-    public UUID getId() {
-        return id;
-    }
-
-    public String getIdempotencyKey() {
-        return idempotencyKey;
-    }
-
-    public void setIdempotencyKey(String idempotencyKey) {
-        this.idempotencyKey = idempotencyKey;
-    }
-
-    public NotificationChannel getChannel() {
-        return channel;
-    }
-
-    public void setChannel(NotificationChannel channel) {
-        this.channel = channel;
-    }
-
-    public String getRecipient() {
-        return recipient;
-    }
-
-    public void setRecipient(String recipient) {
-        this.recipient = recipient;
-    }
-
-    public String getTemplate() {
-        return template;
-    }
-
-    public void setTemplate(String template) {
-        this.template = template;
-    }
-
-    public NotificationType getType() {
-        return type;
-    }
-
-    public void setType(NotificationType type) {
-        this.type = type;
-    }
-
-    public NotificationStatus getStatus() {
-        return status;
-    }
-
-    public void setStatus(NotificationStatus status) {
-        this.status = status;
-    }
-
-    public NotificationPriority getPriority() {
-        return priority;
-    }
-
-    public void setPriority(NotificationPriority priority) {
-        this.priority = priority;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public String getPayload() {
-        return payload;
-    }
-
-    public void setPayload(String payload) {
         this.payload = payload;
     }
 }
