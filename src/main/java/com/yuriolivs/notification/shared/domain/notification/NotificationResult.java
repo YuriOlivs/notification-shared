@@ -1,11 +1,15 @@
 package com.yuriolivs.notification.shared.domain.notification;
 
+import com.yuriolivs.notification.shared.domain.schedule.enums.ScheduleStatus;
+import lombok.ToString;
+
 import java.util.UUID;
 
+@ToString
 public class NotificationResult {
     private UUID id;
     private UUID scheduleId;
-    private boolean successful;
+    private ScheduleStatus status;
     private String message;
 
     public NotificationResult() {}
@@ -13,13 +17,13 @@ public class NotificationResult {
     public NotificationResult(
             UUID id,
             UUID scheduleId,
-            boolean successful,
+            ScheduleStatus status,
             String message
     ) {
         this.id = id;
         this.scheduleId = scheduleId;
-        this.successful = successful;
         this.message = message;
+        this.status = status;
     }
 
     public NotificationResult(
@@ -53,12 +57,12 @@ public class NotificationResult {
         this.scheduleId = scheduleId;
     }
 
-    public boolean success() {
-        return successful;
+    public ScheduleStatus getStatus() {
+        return status;
     }
 
-    public void setSuccess(boolean wasSucessful) {
-        this.successful = wasSucessful;
+    public void setStatus(ScheduleStatus status) {
+        this.status = status;
     }
 
     public String getMessage() {
